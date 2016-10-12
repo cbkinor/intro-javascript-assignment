@@ -14,7 +14,17 @@ function employee (name, manager) {
  * @param employees the employees to choose from
  */
 function underlings (manager, employees) {
-  // TODO
+  let result = []
+  function hasManager (employee) {
+    return employee.manager === manager
+  }
+
+  for (let employee of employees) {
+    if (hasManager(employee)) {
+      result.push(employee)
+    }
+  }
+  return result
 }
 
 module.exports = {
